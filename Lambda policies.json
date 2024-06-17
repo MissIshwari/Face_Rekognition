@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "sns:Publish",
+                "sqs:SendMessage",
+                "s3:PutObject",
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "rekognition:DetectLabels",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::aws-ishwari-rekog/*",
+                "arn:aws:sns:ap-south-1:515210271098:ishwari-aws-rekog-topic-file-upload",
+                "arn:aws:sqs:ap-south-1:515210271098:ishwari-aws-rekog-file-upload-queue",
+                "arn:aws:s3:::aws-ishwari-rekog/",
+                "arn:aws:logs:ap-south-1:515210271098:*",
+                "arn:aws:logs:ap-south-1:515210271098:log-group:/aws/lambda/ishwari-aws-rekog-upload-analyze:*",
+                "arn:aws:logs:ap-south-1:515210271098:log-group:/aws/lambda/ishwari-aws-rekog-upload-analyze:*",
+                "*",
+                "arn:aws:s3:::aws-ishwari-rekog/*"
+            ]
+        }
+    ]
+}
